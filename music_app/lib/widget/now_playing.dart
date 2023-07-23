@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import '../constants/app_color.dart';
 
-class NeumorphismBtn extends StatelessWidget {
-  const NeumorphismBtn({
+class NowPlaying extends StatelessWidget {
+  const NowPlaying({
     super.key,
     required this.size,
      this.child,
@@ -24,21 +24,22 @@ class NeumorphismBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size,
+      width: 250,
       height: size,
       padding:  EdgeInsets.all(padding ?? 3),
       clipBehavior: Clip.antiAliasWithSaveLayer,
       decoration: BoxDecoration(
+         borderRadius: BorderRadius.circular(36),
         color: colors == null ? AppColor.bgColor : colors![1],
-        shape: BoxShape.circle,
+        shape: BoxShape.rectangle,
         boxShadow: [
           BoxShadow(
-            color: AppColor.white,
+            color: Color.fromARGB(255, 248, 248, 248),
             blurRadius: blur,
             offset: Offset(-distance, -distance),
           ),
           BoxShadow(
-            color: AppColor.bgDark,
+            color: Color.fromARGB(255, 230, 202, 238),
             blurRadius: blur,
             offset: Offset(distance, distance),
           ),
@@ -46,10 +47,26 @@ class NeumorphismBtn extends StatelessWidget {
       ),
       child: imageUrl!=null?
 
-       CircleAvatar(
+       ClipRRect(
+                    borderRadius: BorderRadius.circular(32),
+                    child: Image.asset( imageUrl!, height: 60,),
+                  )
+
+
+      // Container(
+      //    decoration: BoxDecoration(
+      //     borderRadius: BorderRadius.circular(12),
+      //     child:
+      //    )
+      // )
+
+      //  Image.asset(imageUrl! )
+       
+
+      //  CircleAvatar(
         
-         backgroundImage: AssetImage(imageUrl!),
-       )
+      //    backgroundImage: AssetImage(imageUrl!),
+      //  )
       //RectangularAvatar(backgroundImage:AssetImage(imageUrl!), height: 80, width: 80, )
        :Container(
         decoration: BoxDecoration(
@@ -61,7 +78,7 @@ class NeumorphismBtn extends StatelessWidget {
               colors: colors ??
                   [
                     AppColor.white,
-                    Color.fromARGB(255, 230, 174, 241),
+                    AppColor.bgDark,
                   ],
             )),
         child: child,

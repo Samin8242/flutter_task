@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/constants/app_color.dart';
 import 'package:music_app/model/music_model.dart';
+import 'package:music_app/widget/now_playing.dart';
 import '../widget/neumorphism_buttom.dart';
 
 class PlayerScreen extends StatefulWidget {
@@ -51,14 +52,20 @@ class _PlayerScreenState extends State<PlayerScreen> {
                 const SizedBox(
                   height: 60,
                 ),
-                NeumorphismBtn(
-                  size: size.width * 0.8,
+                //nowplaying
+                // NeumorphismBtn(
+                //   size: size.width * 0.8,
+                //   distance: 20,
+                //   padding: 10,
+                //   imageUrl:  "assets/images/4.jpg",
+                // ),
+
+                NowPlaying(size: size.width * 0.8,
                   distance: 20,
                   padding: 10,
-                  imageUrl:  "assets/images/4.jpg",
-                ),
-
-                 
+                  imageUrl:  "assets/images/10.jpg",),
+ 
+                 SizedBox(height: 40,),
                 const Column(
                   children: [
                     Text(
@@ -69,6 +76,7 @@ class _PlayerScreenState extends State<PlayerScreen> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    SizedBox(height: 5,),
                     Text(
                       "Clean water noice",
                       style: TextStyle(
@@ -122,13 +130,13 @@ class _PlayerScreenState extends State<PlayerScreen> {
                 const NeumorphismBtn(
                   size: 80,
                   colors: [
-                    Color.fromARGB(255, 236, 205, 233),
+                    Color.fromARGB(255, 225, 214, 224),
                     Color.fromARGB(255, 247, 241, 248)
                   ],
                   padding: 7,
                   child: Icon(
                     Icons.pause_rounded,
-                    color: Color.fromARGB(255, 170, 61, 176),
+                    color: Color.fromARGB(255, 193, 124, 197),
                     size: 35,
                   ),
                 )

@@ -75,7 +75,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(
-              height: 30,
+              height: 50,
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.0),
@@ -117,7 +117,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             const SizedBox(
-              height: 25,
+              height: 40,
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.0),
@@ -136,7 +136,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             const SizedBox(
-              height: 15,
+              height: 25,
             ),
 
             Container(
@@ -154,7 +154,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             const SizedBox(
-              height: 25,
+              height: 45,
             ),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 25.0),
@@ -185,7 +185,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   const MiniCourses(
                     name: 'Meditate easily',
-                    iconImagePath: "assets/images/5.jpg",
+                    iconImagePath: "assets/images/2.jpg",
                   ),
                   MiniCourses(
                     name: 'Meditate easily',
@@ -199,9 +199,11 @@ class HomeScreen extends StatelessWidget {
               height: 40,
             ),
 
-            Container(
-              height: 200,
-              child: CurrentPlaying(),
+            Expanded(
+              child: Container(
+                height: 200,
+                child: CurrentPlaying(),
+              ),
             ),
           ],
         ),

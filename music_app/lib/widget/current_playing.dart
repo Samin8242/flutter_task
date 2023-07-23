@@ -25,12 +25,12 @@ class _CurrentPlayingState extends State<CurrentPlaying> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 25.0),
+      padding: const EdgeInsets.all(5),
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 249, 250, 251),
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(25),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -115,26 +115,62 @@ class _CurrentPlayingState extends State<CurrentPlaying> {
                       color: Color.fromARGB(255, 255, 255, 255),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: const Icon(
-                      Icons.pause_rounded,
-                      color: Color.fromARGB(255, 170, 61, 176),
-                      size: 35,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(22),
+                        gradient:const LinearGradient(colors: 
+                        [
+                          Color.fromARGB(255, 230, 219, 231),
+                          Color.fromARGB(66, 243, 238, 245),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.topRight,
+                        )
+                      ),
+                      child: const Icon(
+                        Icons.pause_rounded,
+                        shadows: [Shadow(color: Color.fromARGB(255, 233, 223, 236))],
+                        color: Color.fromARGB(255, 187, 131, 190),
+                      
+                        
+                        size: 35,
+                      ),
                     ),
                   ),
 
-                  Container(
-                    // padding: EdgeInsets.all(2),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 229, 134, 228),
-                      borderRadius: BorderRadius.circular(13),
-                      border: Border.all(),
-                    ),
-                    child: OutlinedButton.icon(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) =>PlayerScreen()),);
-                    }, icon:const Icon(Icons.arrow_right_alt, size: 20,color: Colors.white), label: const Text(''),)
-                  ),
+                 
 
                   //pause
+
+                  Container(
+                    //padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        gradient: LinearGradient(colors: 
+                        [
+                          Color.fromARGB(255, 198, 126, 202),
+                          Color.fromARGB(66, 103, 45, 196),
+                        ],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                        )
+                      ),
+                      child: IconButton(
+                        iconSize: 50,
+                        icon: Icon(Icons.arrow_right_alt,color: Color.fromARGB(255, 252, 251, 252),),
+                        onPressed: (){
+                          
+                      Navigator.push(context, MaterialPageRoute(builder: (context) =>PlayerScreen()),);
+
+                        },
+                      ),
+                    ),
+                  ),
 
                   //navigation icon
                 ],
